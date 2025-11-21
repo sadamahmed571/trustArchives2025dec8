@@ -49,25 +49,25 @@ export default function AdminPage() {
           <div className="stat-item">
             <div className="stat-label">الموردين</div>
             <div className="stat-number" id="suppliersCount">
-              6
+              0
             </div>
           </div>
           <div className="stat-item">
             <div className="stat-label">المنتجات</div>
             <div className="stat-number" id="productsCount">
-              6
+              0
             </div>
           </div>
           <div className="stat-item">
             <div className="stat-label">الاعضاء</div>
             <div className="stat-number" id="membersCount">
-              3
+              0
             </div>
           </div>
           <div className="stat-item">
             <div className="stat-label">العملاء</div>
             <div className="stat-number" id="clientsCount">
-              20
+              0
             </div>
           </div>
         </div>
