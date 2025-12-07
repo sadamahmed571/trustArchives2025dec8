@@ -2,8 +2,6 @@
 
 import { useState } from "react"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { ChatButtons } from "@/components/chat-buttons"
 import { ThemeToggle } from "@/components/theme-toggle"
 import Image from "next/image"
 
@@ -561,9 +559,6 @@ export default function ProfilePage() {
           </div>
         </div>
       )}
-
-      <ChatButtons />
-      
     </>
   )
 }
