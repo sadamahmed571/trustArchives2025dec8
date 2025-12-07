@@ -1,7 +1,6 @@
 "use client"
 
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ChatButtons } from "@/components/chat-buttons"
 import { ThemeToggle } from "@/components/theme-toggle"
 import Link from "next/link"
@@ -25,6 +24,23 @@ export default function AddSupplierPage() {
               <h4 className="add-supplier-section-title">
                 <i className="fas fa-id-card icon-primary"></i> معلومات الاتصال والتعريف الأساسية
               </h4>
+
+              <div className="add-supplier-grid">
+                <div className="add-supplier-group full-width">
+                  <label htmlFor="supplier-serial">
+                    <i className="fas fa-barcode icon-primary"></i> الرقم التسلسلي للمورد (تلقائي)
+                  </label>
+                  <input
+                    type="text"
+                    id="supplier-serial"
+                    name="supplier_serial"
+                    className="bg-gray-100 cursor-not-allowed"
+                    defaultValue={`SUP-${Math.floor(Math.random() * 1000000)}`}
+                    readOnly
+                  />
+                </div>
+              </div>
+
               <div className="add-supplier-grid">
                 <div className="add-supplier-group">
                   <label htmlFor="add-supplier-name-ar">
@@ -592,7 +608,6 @@ export default function AddSupplierPage() {
       </section>
 
       <ChatButtons />
-       
     </>
   )
 }
