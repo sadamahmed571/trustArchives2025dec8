@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ChatButtons } from "@/components/chat-buttons"
 import Link from "next/link"
+import { AdminControls } from "@/components/admin-controls"
 
 export default function OperationalAccessoryPage({ params }: { params: { id: string } }) {
   return (
@@ -12,6 +12,8 @@ export default function OperationalAccessoryPage({ params }: { params: { id: str
       <Header />
 
       <div className="container">
+        <AdminControls id={params.id} editUrl="/add-operational-accessories" type="مستلزم التشغيل" />
+
         <div className="product-container">
           <div id="product-details">
             {/* Upper Section: Product Layout */}
@@ -135,13 +137,19 @@ export default function OperationalAccessoryPage({ params }: { params: { id: str
                   <div className="general-info-grid">
                     <div className="general-info-item">
                       <div className="label">
-                        <i className="fas fa-link"></i> المنتج الأساسي المُرتبط
+                        <i className="fas fa-link"></i> حالة الربط
+                      </div>
+                      <div className="value">مستقل / عام</div>
+                    </div>
+                    <div className="general-info-item">
+                      <div className="label">
+                        <i className="fas fa-cube"></i> المنتج الأساسي المُرتبط
                       </div>
                       <div className="value">جميع الماكينات</div>
                     </div>
                     <div className="general-info-item">
                       <div className="label">
-                        <i className="fas fa-folder-open"></i> التصنيف النوعي للمستلزم
+                        <i className="fas fa-folder-open"></i> الفئة الفرعية
                       </div>
                       <div className="value">زيوت وشحوم</div>
                     </div>
@@ -153,7 +161,13 @@ export default function OperationalAccessoryPage({ params }: { params: { id: str
                     </div>
                     <div className="general-info-item">
                       <div className="label">
-                        <i className="fas fa-barcode"></i> رقم المرجع
+                        <i className="fas fa-barcode"></i> رقم المرجع (Reference No)
+                      </div>
+                      <div className="value">REF-98765</div>
+                    </div>
+                    <div className="general-info-item">
+                      <div className="label">
+                        <i className="fas fa-barcode"></i> الرقم التسلسلي (System Serial)
                       </div>
                       <div className="value">ACC-{params.id}</div>
                     </div>
@@ -201,7 +215,6 @@ export default function OperationalAccessoryPage({ params }: { params: { id: str
         </div>
       </div>
 
-     
       <ChatButtons />
     </>
   )
