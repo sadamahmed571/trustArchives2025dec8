@@ -154,7 +154,203 @@ export default function AddProductPage() {
                 </div>
               </div>
 
+              {/* القسم الجديد: القدرة الإنتاجية ومؤشرات الكفاءة */}
               <div className="product-section" id="section-3">
+                <h2 className="product-section-title">
+                  <i className="fas fa-tachometer-alt"></i> القدرة الإنتاجية ومؤشرات الكفاءة
+                </h2>
+
+                {/* القدرة الإنتاجية */}
+                <div className="product-form-group full-width">
+                  <label className="product-form-label">
+                    <i className="fas fa-industry"></i> القدرة الإنتاجية ومعدلات الكفاءة *
+                  </label>
+                  <div className="product-form-grid grid-3">
+                    <div className="product-form-group">
+                      <label className="product-form-label" htmlFor="capacityValue">
+                        القيمة
+                      </label>
+                      <input
+                        type="number"
+                        id="capacityValue"
+                        className="product-form-input"
+                        placeholder="أدخل القيمة"
+                        required
+                        step="any"
+                        min="0"
+                      />
+                    </div>
+
+                    <div className="product-form-group">
+                      <label className="product-form-label" htmlFor="unitType">
+                        الوحدة
+                      </label>
+                      <select
+                        id="unitType"
+                        className="product-form-input"
+                        onChange={(e) => {
+                          const customUnitInput = document.getElementById('customUnitInput');
+                          if (e.target.value === 'custom') {
+                            customUnitInput.classList.remove('hidden');
+                          } else {
+                            customUnitInput.classList.add('hidden');
+                          }
+                        }}
+                      >
+                        <option value="piece">قطعة / وحدة</option>
+                        <option value="ton">طن</option>
+                        <option value="cubic-meter">متر مكعب</option>
+                        <option value="square-meter">متر مربع</option>
+                        <option value="kg">كجم</option>
+                        <option value="liter">لتر</option>
+                        <option value="ampere">أمبير</option>
+                        <option value="custom">خيار مخصص</option>
+                      </select>
+                      <input
+                        type="text"
+                        id="customUnitInput"
+                        className="product-form-input hidden mt10"
+                        placeholder="أدخل الوحدة المخصصة"
+                      />
+                    </div>
+
+                    <div className="product-form-group">
+                      <label className="product-form-label" htmlFor="timePeriod">
+                        الفترة الزمنية
+                      </label>
+                      <select
+                        id="timePeriod"
+                        className="product-form-input"
+                        onChange={(e) => {
+                          const customTimeInput = document.getElementById('customTimeInput');
+                          if (e.target.value === 'custom') {
+                            customTimeInput.classList.remove('hidden');
+                          } else {
+                            customTimeInput.classList.add('hidden');
+                          }
+                        }}
+                      >
+                        <option value="minute">دقيقة</option>
+                        <option value="hour">ساعة</option>
+                        <option value="shift">وردية عمل (8 ساعات)</option>
+                        <option value="day">يوم</option>
+                        <option value="month">شهر</option>
+                        <option value="custom">خيار مخصص</option>
+                      </select>
+                      <input
+                        type="text"
+                        id="customTimeInput"
+                        className="product-form-input hidden mt10"
+                        placeholder="أدخل الفترة الزمنية المخصصة"
+                      />
+                    </div>
+                  </div>
+                  <div className="product-preview mt10">
+                    <span id="capacityPreview">0 قطعة / وحدة / دقيقة</span>
+                  </div>
+                </div>
+
+                {/* معدل الاستهلاك */}
+                <div className="product-form-group full-width mt20">
+                  <label className="product-form-label">
+                    <i className="fas fa-chart-line"></i> معدل الاستهلاك (Input/Output Ratio) *
+                  </label>
+                  <div className="product-form-grid grid-3">
+                    <div className="product-form-group">
+                      <label className="product-form-label" htmlFor="consumptionValue">
+                        قيمة الاستهلاك
+                      </label>
+                      <input
+                        type="number"
+                        id="consumptionValue"
+                        className="product-form-input"
+                        placeholder="أدخل القيمة"
+                        required
+                        step="any"
+                        min="0"
+                      />
+                    </div>
+
+                    <div className="product-form-group">
+                      <label className="product-form-label" htmlFor="inputUnit">
+                        وحدة الاستهلاك
+                      </label>
+                      <select
+                        id="inputUnit"
+                        className="product-form-input"
+                        onChange={(e) => {
+                          const customInputUnit = document.getElementById('customInputUnit');
+                          if (e.target.value === 'custom') {
+                            customInputUnit.classList.remove('hidden');
+                          } else {
+                            customInputUnit.classList.add('hidden');
+                          }
+                        }}
+                      >
+                        <option value="kwh">كيلو واط/ساعة (kWh)</option>
+                        <option value="liter">لتر</option>
+                        <option value="cubic-meter">متر مكعب</option>
+                        <option value="kg">كجم</option>
+                        <option value="custom">خيار مخصص</option>
+                      </select>
+                      <input
+                        type="text"
+                        id="customInputUnit"
+                        className="product-form-input hidden mt10"
+                        placeholder="أدخل وحدة الاستهلاك المخصصة"
+                      />
+                    </div>
+
+                    <div className="product-form-group">
+                      <label className="product-form-label" htmlFor="outputReferenceUnit">
+                        الوحدة المرجعية للمنتج
+                      </label>
+                      <select
+                        id="outputReferenceUnit"
+                        className="product-form-input"
+                        onChange={(e) => {
+                          const customOutputUnit = document.getElementById('customOutputUnit');
+                          if (e.target.value === 'custom') {
+                            customOutputUnit.classList.remove('hidden');
+                          } else {
+                            customOutputUnit.classList.add('hidden');
+                          }
+                        }}
+                      >
+                        <option value="per_unit">لكل وحدة منتجة</option>
+                        <option value="per_square_meter">لكل متر مربع منتج</option>
+                        <option value="per_ton">لكل طن منتج</option>
+                        <option value="per_hour">لكل ساعة تشغيل</option>
+                        <option value="custom">خيار مخصص</option>
+                      </select>
+                      <input
+                        type="text"
+                        id="customOutputUnit"
+                        className="product-form-input hidden mt10"
+                        placeholder="أدخل الوحدة المرجعية المخصصة"
+                      />
+                    </div>
+                  </div>
+                  <div className="product-preview mt10">
+                    <span id="consumptionPreview">0 كيلو واط/ساعة (kWh) / لكل وحدة منتجة</span>
+                  </div>
+                </div>
+
+                {/* عامل التحويل الداخلي */}
+                <div className="product-form-group full-width mt20">
+                  <label className="product-form-label" htmlFor="conversionFactor">
+                    <i className="fas fa-exchange-alt"></i> عامل التحويل الداخلي للمقارنة (اختياري)
+                  </label>
+                  <input
+                    type="text"
+                    id="conversionFactor"
+                    className="product-form-input"
+                    placeholder="أدخل عامل التحويل (للاستخدام الداخلي)"
+                  />
+                </div>
+              </div>
+
+              <div className="product-section" id="section-4">
                 <h2 className="product-section-title">
                   <i className="fas fa-paperclip"></i> المرفقات والتوثيق
                 </h2>
@@ -237,7 +433,7 @@ export default function AddProductPage() {
                 </div>
               </div>
 
-              <div className="product-section" id="section-4">
+              <div className="product-section" id="section-5">
                 <h2 className="product-section-title">
                   <i className="fas fa-truck-loading"></i> الموردين والمخزون
                 </h2>
@@ -317,7 +513,7 @@ export default function AddProductPage() {
                 </button>
               </div>
 
-              <div className="product-section" id="section-7">
+              <div className="product-section" id="section-6">
                 <h2 className="product-section-title">
                   <i className="fas fa-search"></i> إعدادات الموقع الإضافية (SEO والرؤية)
                 </h2>
@@ -386,7 +582,7 @@ export default function AddProductPage() {
         </div>
       </div>
 
-      <ChatButtons />
+      
     </>
   )
 }
