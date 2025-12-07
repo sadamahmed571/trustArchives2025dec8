@@ -4,9 +4,7 @@ import { useState } from "react"
 import { getSuppliers } from "@/lib/data"
 import { SupplierCard } from "@/components/supplier-card"
 import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { ChatButtons } from "@/components/chat-buttons"
-import Image from "next/image"
 import Link from "next/link"
 
 export default function SuppliersPage() {
@@ -24,9 +22,6 @@ export default function SuppliersPage() {
     return matchesSearch && matchesCountry && matchesIndustry
   })
 
-  // Top suppliers for the rate board (just taking top 3 for demo)
-  const topSuppliers = [...allSuppliers].sort((a, b) => b.rating - a.rating).slice(0, 4)
-
   return (
     <>
       <link rel="stylesheet" href="/css/suppliers.css" />
@@ -35,7 +30,7 @@ export default function SuppliersPage() {
       <section id="suppliers" className="section">
         <div className="container">
           <div className="suppliers-header">
-            <div className="suppliers-text">
+            <div className="suppliers-text" style={{ flex: "1", maxWidth: "100%" }}>
               <h1 className="suppliers-title">
                 <i className="fa-solid fa-users-rays"></i>دليل الموردين
               </h1>
@@ -58,33 +53,6 @@ export default function SuppliersPage() {
                   </Link>
                 </div>
               </div>
-            </div>
-            <div className="suppliers-rate-board">
-              <div className="suppliers-rate-header">
-                <h3 className="suppliers-rate-title">
-                  <i className="fa-solid fa-star-half-stroke"></i> افضل خمسة موردين{" "}
-                  <i className="fa-solid fa-star-half-stroke"></i>
-                </h3>
-              </div>
-
-              {topSuppliers.map((supplier) => (
-                <div className="suppliers-rate-item" key={supplier.id}>
-                  <Image
-                    src={supplier.image || "/placeholder.svg"}
-                    alt="supplier-logo"
-                    width={40}
-                    height={40}
-                    className="suppliers-rate-logo"
-                  />
-                  <div className="suppliers-rate-info">
-                    <p className="suppliers-rate-name">{supplier.name}</p>
-                  </div>
-                  <p className="suppliers-rate-points">{supplier.rating} نقطة</p>
-                  <Link className="suppliers-rate-button" href={`/suppliers/${supplier.id}`}>
-                    تفاصيل المورد
-                  </Link>
-                </div>
-              ))}
             </div>
           </div>
 
@@ -173,7 +141,6 @@ export default function SuppliersPage() {
         </div>
       </section>
 
-      
       <ChatButtons />
     </>
   )
