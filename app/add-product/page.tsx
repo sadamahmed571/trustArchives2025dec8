@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Header } from "@/components/header"
@@ -46,12 +47,13 @@ export default function AddProductPage() {
                     <label className="product-form-label" htmlFor="productCategory">
                       <i className="fas fa-folder"></i> الفئة الرئيسية
                     </label>
+                    {/* تعديل فئات المنتج هنا */}
                     <select id="productCategory" className="product-form-input">
                       <option value="">اختر الفئة الرئيسية</option>
-                      <option value="البريكاست">البريكاست</option>
-                      <option value="الماكينات">الماكينات</option>
-                      <option value="خطوط الإنتاج">خطوط الإنتاج</option>
-                      <option value="المعدات الصناعية">المعدات الصناعية</option>
+                      <option value="ماكينات حديثة">ماكينات حديثة</option>
+                      <option value="خطوط انتاج">خطوط انتاج</option>
+                      <option value="معدات صناعية">معدات صناعية</option>
+                      <option value="بناء حديث">بناء حديث</option>
                     </select>
                   </div>
 
@@ -61,8 +63,8 @@ export default function AddProductPage() {
                     </label>
                     <select id="productSubCategory" className="product-form-input">
                       <option value="">اختر الفئة الفرعية</option>
-                      <optgroup label="البريكاست">...</optgroup>
-                      <optgroup label="الماكينات">...</optgroup>
+                      <optgroup label="ماكينات حديثة">...</optgroup>
+                      <optgroup label="خطوط انتاج">...</optgroup>
                     </select>
                   </div>
 
@@ -110,6 +112,26 @@ export default function AddProductPage() {
                   ></textarea>
                 </div>
               </div>
+
+              {/* القسم الجديد: استخدامات المنتج */}
+              <div className="product-section" id="section-1-5">
+                <h2 className="product-section-title">
+                  <i className="fas fa-lightbulb"></i> استخدامات المنتج
+                </h2>
+
+                <div className="product-form-group full-width">
+                  <label className="product-form-label" htmlFor="productUses">
+                    <i className="fas fa-list-ul"></i> قائمة الاستخدامات الأساسية
+                  </label>
+                  <textarea
+                    id="productUses"
+                    className="product-form-textarea"
+                    rows={3}
+                    placeholder="أدخل كل استخدام في سطر جديد أو مفصولاً بفاصلة لإنشاء قائمة"
+                  ></textarea>
+                </div>
+              </div>
+              {/* نهاية قسم استخدامات المنتج */}
 
               {/* Simplified pricing and images section */}
               <div className="product-section" id="section-2">
@@ -355,31 +377,47 @@ export default function AddProductPage() {
                   <i className="fas fa-paperclip"></i> المرفقات والتوثيق
                 </h2>
 
-                <div className="product-form-group full-width">
-                  <label className="product-form-label" htmlFor="productlink">
-                    <i className="fa fa-link" aria-hidden="true"></i> رابط المنتج
-                  </label>
-                  <input
-                    type="url"
-                    id="productVideo"
-                    className="product-form-input"
-                    placeholder="https://www.youtube.com/watch?v=..."
-                  />
-                </div>
+                {/* حقول الروابط المعدلة */}
+                <div className="product-form-grid grid-3">
+                  <div className="product-form-group">
+                    <label className="product-form-label" htmlFor="productLink">
+                      <i className="fa fa-link" aria-hidden="true"></i> رابط المنتج
+                    </label>
+                    <input
+                      type="url"
+                      id="productLink"
+                      className="product-form-input"
+                      placeholder="https://example.com/product..."
+                    />
+                  </div>
 
-                <div className="product-form-group full-width mt20">
-                  <label className="product-form-label" htmlFor="productVideo">
-                    <i className="fab fa-youtube"></i> رابط فيديو للمنتج (YouTube)
-                  </label>
-                  <input
-                    type="url"
-                    id="productVideo"
-                    className="product-form-input"
-                    placeholder="https://www.youtube.com/watch?v=..."
-                  />
-                </div>
+                  <div className="product-form-group">
+                    <label className="product-form-label" htmlFor="productVideoUrl">
+                      <i className="fab fa-youtube"></i> رابط فيديو المنتج (YouTube)
+                    </label>
+                    <input
+                      type="url"
+                      id="productVideoUrl"
+                      className="product-form-input"
+                      placeholder="https://www.youtube.com/watch?v=..."
+                    />
+                  </div>
 
-                <div className="product-form-grid grid-2">
+                  <div className="product-form-group">
+                    <label className="product-form-label" htmlFor="productVideoEmbed">
+                      <i className="fas fa-code"></i> رابط الفيديو المضمن (Embedded)
+                    </label>
+                    <input
+                      type="url"
+                      id="productVideoEmbed"
+                      className="product-form-input"
+                      placeholder="كود تضمين من قناة المتجر"
+                    />
+                  </div>
+                </div>
+                {/* نهاية حقول الروابط المعدلة */}
+
+                <div className="product-form-grid grid-2 mt20">
                   <div className="product-form-group">
                     <label className="product-form-label" htmlFor="productCatalogPdf">
                       <i className="fas fa-file-pdf"></i> كاتلوج المنتج (PDF واحد)
@@ -518,28 +556,9 @@ export default function AddProductPage() {
                   <i className="fas fa-search"></i> إعدادات الموقع الإضافية (SEO والرؤية)
                 </h2>
 
-                <div className="product-form-group full-width">
-                  <label className="product-form-label">
-                    <i className="fas fa-eye"></i> إعدادات الرؤية
-                  </label>
-                  <div className="product-radio-group">
-                    <label className="product-radio-label">
-                      <input
-                        type="radio"
-                        name="productVisibility"
-                        className="product-radio-input"
-                        value="public"
-                        defaultChecked
-                      />
-                      <i className="fas fa-globe"></i> الجميع
-                    </label>
-                    <label className="product-radio-label">
-                      <input type="radio" name="productVisibility" className="product-radio-input" value="private" />
-                      <i className="fas fa-lock"></i> أنا فقط
-                    </label>
-                  </div>
-                </div>
-
+                {/* تم حذف حقل إعدادات الرؤية بناءً على طلبك */}
+                
+                {/* تم تعديل حقل الكلمات المفتاحية ليناسب الإدخالات المتعددة */}
                 <div className="product-form-group full-width">
                   <label className="product-form-label" htmlFor="seoKeywords">
                     <i className="fas fa-key"></i> الكلمات المفتاحية (SEO)
@@ -548,7 +567,7 @@ export default function AddProductPage() {
                     type="text"
                     id="seoKeywords"
                     className="product-form-input"
-                    placeholder="أدخل كلمات مفتاحية مفصولة بفواصل لتحسين نتائج البحث"
+                    placeholder="أدخل كلمات مفتاحية (مثل: اسم المنتج، الموديل، الفئة) مفصولة بفواصل"
                   />
                 </div>
 
@@ -586,3 +605,4 @@ export default function AddProductPage() {
     </>
   )
 }
+
