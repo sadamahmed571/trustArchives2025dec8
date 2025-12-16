@@ -1,0 +1,143 @@
+
+Project Index for "Trust Archives"
+فهرس مشروع "أرشيف الثقة"
+
+---
+### **English Version**
+---
+
+This document provides a hierarchical index of the key files, directories, and pages within the "Trust Archives" project.
+
+**1. Root Level Structure**
+
+- `/app` - Contains all the application's pages and routes (Next.js App Router).
+- `/components` - Contains reusable React components used across the application (e.g., headers, cards, buttons).
+- `/public` - Stores all static assets that are publicly accessible, such as images, stylesheets (CSS), and client-side JavaScript files.
+- `/lib` - Contains utility functions and data-handling logic (e.g., `data.ts`).
+- `/css` - Contains additional project stylesheets.
+- `/hooks` - Custom React hooks for shared component logic.
+- `/scripts` - Automation scripts for development tasks.
+- `package.json` - Defines project metadata, dependencies, and scripts.
+- `next.config.mjs` - Configuration file for the Next.js framework.
+- `tsconfig.json` - Configuration file for the TypeScript compiler.
+- `trust_archives_report.txt` - The detailed technical and functional analysis report for the system.
+
+**2. Application Pages (`/app`)**
+
+This directory defines the URL structure of the application.
+
+- `/app/page.tsx` - The main dashboard/homepage of the application.
+- `/app/login` - The user login page.
+- `/app/profile` - The current user's profile page.
+- `/app/admin` - The main administrative control panel.
+
+- **Product Management:**
+  - `/app/products` - The main board displaying a list of all products.
+  - `/app/products/[id]` - The detailed view page for a single product.
+  - `/app/add-product` - The form for adding a new product to the catalog.
+
+- **Supplier Management:**
+  - `/app/suppliers` - The main board displaying a list of all suppliers.
+  - `/app/suppliers/[id]` - The detailed profile page for a single supplier.
+  - `/app/add-supplier` - The form for registering a new supplier.
+
+- **Client Management:**
+  - `/app/clients` - The main board displaying a list of all clients/customers.
+  - `/app/clients/[id]` - The detailed profile page for a single client.
+  - `/app/add-customer` - The form for adding a new client.
+
+- **User Management:**
+  - `/app/users/add` - The form for adding a new system user.
+  - `/app/users/[id]` - The detailed profile page for a single user.
+
+- **Other Entities:**
+  - `/app/spare-parts` & `/app/add-spare-part` - Management of spare parts.
+  - `/app/operational-accessories` & `/app/add-operational-accessories` - Management of operational accessories.
+  - `/app/offers/create` - Interface for creating new price offers.
+
+**3. Reusable Components (`/components`)**
+
+- `/components/header.tsx` - The main application header.
+- `/components/footer.tsx` - The main application footer.
+- `/components/chat-buttons.tsx` - Floating chat/contact buttons.
+- `/components/product-card.tsx` - UI component for displaying a product summary.
+- `/components/supplier-card.tsx` - UI component for displaying a supplier summary.
+- `/components/client-card.tsx` - UI component for displaying a client summary.
+- `/components/admin-controls.tsx` - Reusable Edit/Delete buttons for admin pages.
+- `/components/ui/` - A directory containing a rich set of shadcn/ui components (Button, Card, Input, etc.).
+
+**4. Static Assets (`/public`)**
+
+- `/public/css/` - Contains all the CSS stylesheets for individual pages (e.g., `add-product.css`, `suppliers.css`).
+- `/public/js/` - Contains legacy client-side JavaScript files for interactivity and DOM manipulation.
+- `/public/*.png, *.svg, *.jpg` - Contains static images, logos, and placeholders used in the application.
+
+---
+### **النسخة العربية**
+---
+
+يقدم هذا المستند فهرسًا هرميًا للملفات والمجلدات والصفحات الرئيسية في مشروع "أرشيف الثقة".
+
+**١. الهيكل الأساسي (Root)**
+
+- `/app` - يحتوي على جميع صفحات وتوجيهات التطبيق (يعتمد على Next.js App Router).
+- `/components` - يحتوي على مكونات React القابلة لإعادة الاستخدام عبر التطبيق (مثل الترويسات، البطاقات، الأزرار).
+- `/public` - يخزن جميع الأصول الثابتة التي يمكن الوصول إليها بشكل عام، مثل الصور وملفات الأنماط (CSS) وملفات JavaScript من جانب العميل.
+- `/lib` - يحتوي على وظائف مساعدة ومنطق معالجة البيانات (مثل `data.ts`).
+- `/css` - يحتوي على ملفات أنماط إضافية للمشروع.
+- `/hooks` - خطافات React مخصصة للمنطق المشترك بين المكونات.
+- `/scripts` - سكربتات لأتمتة مهام التطوير.
+- `package.json` - يحدد بيانات المشروع الوصفية، الاعتماديات، والسكربتات.
+- `next.config.mjs` - ملف الإعدادات لإطار العمل Next.js.
+- `tsconfig.json` - ملف الإعدادات لمترجم TypeScript.
+- `trust_archives_report.txt` - تقرير التحليل الفني والوظيفي المفصل للنظام.
+
+**٢. صفحات التطبيق (`/app`)**
+
+يحدد هذا المجلد هيكل روابط URL للتطبيق.
+
+- `/app/page.tsx` - لوحة التحكم الرئيسية / الصفحة الرئيسية للتطبيق.
+- `/app/login` - صفحة تسجيل دخول المستخدم.
+- `/app/profile` - صفحة الملف الشخصي للمستخدم الحالي.
+- `/app/admin` - لوحة التحكم الإدارية الرئيسية.
+
+- **إدارة المنتجات:**
+  - `/app/products` - اللوحة الرئيسية التي تعرض قائمة بجميع المنتجات.
+  - `/app/products/[id]` - صفحة العرض التفصيلي لمنتج واحد.
+  - `/app/add-product` - نموذج إضافة منتج جديد إلى الكتالوج.
+
+- **إدارة الموردين:**
+  - `/app/suppliers` - اللوحة الرئيسية التي تعرض قائمة بجميع الموردين.
+  - `/app/suppliers/[id]` - صفحة الملف الشخصي التفصيلية لمورد واحد.
+  - `/app/add-supplier` - نموذج تسجيل مورد جديد.
+
+- **إدارة العملاء:**
+  - `/app/clients` - اللوحة الرئيسية التي تعرض قائمة بجميع العملاء.
+  - `/app/clients/[id]` - صفحة الملف الشخصي التفصيلية لعميل واحد.
+  - `/app/add-customer` - نموذج إضافة عميل جديد.
+
+- **إدارة المستخدمين:**
+  - `/app/users/add` - نموذج إضافة مستخدم جديد للنظام.
+  - `/app/users/[id]` - صفحة الملف الشخصي التفصيلية لمستخدم واحد.
+
+- **كيانات أخرى:**
+  - `/app/spare-parts` و `/app/add-spare-part` - لإدارة قطع الغيار.
+  - `/app/operational-accessories` و `/app/add-operational-accessories` - لإدارة الملحقات التشغيلية.
+  - `/app/offers/create` - واجهة لإنشاء عروض أسعار جديدة.
+
+**٣. المكونات القابلة لإعادة الاستخدام (`/components`)**
+
+- `/components/header.tsx` - ترويسة التطبيق الرئيسية.
+- `/components/footer.tsx` - تذييل التطبيق الرئيسي.
+- `/components/chat-buttons.tsx` - أزرار الدردشة/الاتصال العائمة.
+- `/components/product-card.tsx` - مكون واجهة مستخدم لعرض ملخص المنتج.
+- `/components/supplier-card.tsx` - مكون واجهة مستخدم لعرض ملخص المورد.
+- `/components/client-card.tsx` - مكون واجهة مستخدم لعرض ملخص العميل.
+- `/components/admin-controls.tsx` - أزرار تعديل/حذف قابلة لإعادة الاستخدام للصفحات الإدارية.
+- `/components/ui/` - مجلد يحتوي على مجموعة غنية من مكونات shadcn/ui (مثل Button, Card, Input).
+
+**٤. الأصول الثابتة (`/public`)**
+
+- `/public/css/` - يحتوي على جميع ملفات الأنماط (CSS) للصفحات الفردية (مثل `add-product.css`, `suppliers.css`).
+- `/public/js/` - يحتوي على ملفات JavaScript قديمة من جانب العميل للتفاعلية ومعالجة DOM.
+- `/public/*.png, *.svg, *.jpg` - يحتوي على الصور الثابتة والشعارات والصور النائبة المستخدمة في التطبيق.
